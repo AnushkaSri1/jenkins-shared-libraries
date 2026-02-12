@@ -1,5 +1,9 @@
-FROM eclipse-temurin:17-jdk
+# Use lightweight base image
+FROM alpine:latest
+
+# Set working directory inside container
 WORKDIR /app
-COPY target/*.jar app.jar
-ENTRYPOINT ["java", "-jar", "app.jar"]
+
+# Default command when container runs
+CMD ["echo", "Docker image built successfully from Jenkins pipeline!"]
 
